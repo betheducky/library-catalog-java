@@ -11,7 +11,9 @@ public class User {
     private List<MediaItem> favorites;
 
     public User(String name) {
+
         this.name = name;
+        
     }
 
     public String getName() {
