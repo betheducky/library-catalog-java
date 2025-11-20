@@ -7,7 +7,7 @@ import java.util.List;
 
 public class LibraryManager {
 
-    private List<MediaItem> catalog;
+    private List<MediaItem> catalog = new ArrayList<>();
 
     public LibraryManager(List<MediaItem> catalog) {
         this.catalog = catalog;
@@ -53,5 +53,19 @@ public class LibraryManager {
         return filterResult;
     }
 
+    public void displayCatalog() {
+        for (MediaItem item : catalog) {
+            System.out.println(item.toString());
+        }
+    }
+
+    public List<MediaItem> getCatalog() {
+        return new ArrayList<>(catalog);
+    }
+
+    public void consumeItem(String id) {
+        MediaItem item = findById(id);
+        item.consume();
+    }
     
 }
