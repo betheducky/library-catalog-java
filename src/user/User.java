@@ -7,11 +7,13 @@ import java.util.ArrayList;
 public class User {
 
     private String name;
-    private List<MediaItem> borrowedItems;
-    private List<MediaItem> favorites;
+    private List<MediaItem> borrowedItems = new ArrayList<>();
+    private List<MediaItem> favorites = new ArrayList<>();
 
     public User(String name) {
+
         this.name = name;
+        
     }
 
     public String getName() {
@@ -46,14 +48,10 @@ public class User {
     }
 
     public List<MediaItem> getBorrowed() {
-
         return this.borrowedItems;
-        
     }
 
     public List<MediaItem> getFavorites() {
-
         return this.favorites;
-
     }
 }
