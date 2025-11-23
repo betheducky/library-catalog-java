@@ -73,6 +73,6 @@ public class Movie extends MediaItem implements Previewable, Downloadable {
 
     @Override
     public String serialize() {
-        return "MOVIE|" + getId() + "|" + getTitle() + "|" + getGenre() + "|" + getDirector() + "|" + getDurationMinutes();
+        return "MOVIE|" + getId() + "|" + getTitle() + "|" + getGenre() + "|" + getDurationMinutes() + "|" + getDirector() + "|" + getRating();
     }
 }

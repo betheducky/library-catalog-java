@@ -1,7 +1,10 @@
 package library;
 
 import media.MediaItem;
+import library.exceptions.InvalidDataException;
+import library.persistence.FileHandler;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +54,11 @@ public class LibraryManager {
             }
         }
         return filterResult;
+    }
+
+    public void loadCatalog(String path) throws InvalidDataException, IOException {
+        FileHandler handler = new FileHandler();
+        this.catalog = handler.loadCatalog(path);
     }
 
     public void displayCatalog() {
