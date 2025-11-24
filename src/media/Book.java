@@ -30,6 +30,10 @@ public class Book extends MediaItem implements Previewable{
         this.pageCount = pageCount;
     }
 
+    public static Book sortDeserialized(String[] fields) {
+        return new Book(fields[0], fields[1], fields[2], fields[4], Integer.parseInt(fields[5]));
+    }
+
     @Override
     public String getDetails() {
         return "Details for the book you have selected are as follow: " + getId() + ", " + getTitle() + ", " + getAuthor() + ", " + getGenre() + ", " + getPageCount();
@@ -50,4 +54,8 @@ public class Book extends MediaItem implements Previewable{
         System.out.println("Chapter 1: Once upon a time, in a land far, far away...");
     }
 
+    @Override
+    public String serializeExtra() {
+        return "MOVIE|" + getAuthor() + "|" + getPageCount();
+    }
 }

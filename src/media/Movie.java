@@ -3,7 +3,7 @@ package media;
 import media.interfaces.Previewable;
 import media.interfaces.Downloadable;
 
-public class Movie extends MediaItem implements Previewable, Downloadable {
+public class Movie extends MediaItem implements Previewable, Downloadable  {
 
     private int durationMinutes;
     private String director;
@@ -18,7 +18,7 @@ public class Movie extends MediaItem implements Previewable, Downloadable {
         this.rating = rating;
     }
 
-    public int getdurationMinutes() {
+    public int getDurationMinutes() {
         return this.durationMinutes;
     }
 
@@ -42,9 +42,13 @@ public class Movie extends MediaItem implements Previewable, Downloadable {
         this.rating = rating;
     }
 
+     public static Movie sortDeserialized(String[] fields) {
+        return new Movie(fields[0], fields[1], fields[2], Integer.parseInt(fields[4]), fields[5], Double.parseDouble(fields[6]));
+    }
+
     @Override
     public String getDetails() {
-        return "Details for the movie you have selected are as follow: " + getId() + ", " + getTitle() + ", " + getDirector() + ", " + getGenre() + ", " + getdurationMinutes() + ", " + getRating();
+        return "Details for the movie you have selected are as follow: " + getId() + ", " + getTitle() + ", " + getDirector() + ", " + getGenre() + ", " + getDurationMinutes() + ", " + getRating();
     }
 
     @Override
@@ -69,5 +73,10 @@ public class Movie extends MediaItem implements Previewable, Downloadable {
         } else {
             System.out.println("UnavailableException! " + getTitle() + " is not available to download.");
         }
+    }
+
+    @Override
+    public String serializeExtra() {
+        return "MOVIE|" + getDurationMinutes() + "|" + getDirector() + "|" + getRating();
     }
 }
