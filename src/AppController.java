@@ -2,6 +2,10 @@
 import library.LibraryManager;
 import util.InputHelper;
 import user.User;
+import media.Book;
+import media.Movie;
+import media.AudioBook;
+import media.MediaItem;
 
 public class AppController {
 
@@ -63,7 +67,59 @@ public class AppController {
             String genre = InputHelper.readString("Genre: ");
 
             switch(type) {
-                
+                case 1 -> {
+                    String author = InputHelper.readString("Author: ");
+                    int pageCount = InputHelper.readInt("Page Count: ");
+                    manager.addItem(new Book(id, title, genre, author, pageCount)); 
+                }
+
+                case 2 -> {
+                    int duration = InputHelper.readInt("Duration in minutes: ");
+                    String director = InputHelper.readString("Director: ");
+                    Double rating = InputHelper.readDouble("Rating: ");
+                    manager.addItem(new Movie(id, title, genre, duration, director, rating));
+                }
+
+                case 3 -> {
+                    String narrator = InputHelper.readString("Narrator: ");
+                    int length = InputHelper.readInt("Length in Minutes: ");
+                    manager.addItem(new AudioBook(id, title, genre, narrator, length));
+                }
             }
         }
-}
+
+        private void listMedia() {
+            manager.displayCatalog();
+        }
+
+        private void borrowMedia() {
+            String id = InputHelper.readString("Enter ID: ");
+
+            try {
+                MediaItem item = manager.findById(id);
+                user.borrowItem(item);
+                System.out.println("Borrowed!");
+                System.out.println("Your currently borrowed items are as follow: ");
+                System.out.println(user.getBorrowed());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        private void returnMedia() {
+            String id = InputHelper.readString("Enter ID: ");
+
+            try {
+                MediaItem item = manager.findById(id);
+                user.returnItem(item);
+                System.out.println("Item returned!");
+                System.out.println("Your currently borrowed items are as follow: ");
+                System.out.println(user.getBorrowed());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        
+
+    }

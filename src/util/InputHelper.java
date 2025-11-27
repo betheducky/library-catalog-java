@@ -1,5 +1,6 @@
 package util;
 
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class InputHelper {
@@ -17,6 +18,17 @@ public class InputHelper {
                 return Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a valid integer: ");
+            }
+        }
+    }
+
+    public static Double readDouble(String prompt) {
+        while(true) {
+            System.out.print(prompt);
+            try {
+                return Double.parseDouble(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid double: ");    
             }
         }
     }
