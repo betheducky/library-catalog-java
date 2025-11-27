@@ -4,6 +4,7 @@ import util.InputHelper;
 import user.User;
 import media.Book;
 import media.Movie;
+import media.interfaces.Previewable;
 import media.AudioBook;
 import media.MediaItem;
 
@@ -120,6 +121,20 @@ public class AppController {
             }
         }
 
-        
+        private void previewMedia() {
+            String id = InputHelper.readString("Enter ID: ");
+            MediaItem item = manager.findById(id);
+
+            if(item instanceof Previewable p) {
+                p.preview();
+            } else {
+                System.out.println("This item cannot be previewed");
+            }
+        }
+
+        private void consumeMedia() {
+            String id = InputHelper.readString("Enter ID: ");
+            manager.consumeItem(id);
+        }
 
     }

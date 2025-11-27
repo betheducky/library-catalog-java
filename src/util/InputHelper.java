@@ -1,6 +1,5 @@
 package util;
 
-import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class InputHelper {

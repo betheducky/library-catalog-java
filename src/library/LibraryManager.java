@@ -62,9 +62,16 @@ public class LibraryManager {
     }
 
     public void displayCatalog() {
-        for (MediaItem item : catalog) {
+        if(catalog.size() > 0) {
+            for (MediaItem item : catalog) {
             System.out.println(item.toString());
         }
+        } else {
+            System.out.println();
+            System.out.println("No items in Catalog! \n Add an item first!");
+            System.out.println();
+        }
+        
     }
 
     public List<MediaItem> getCatalog() {
