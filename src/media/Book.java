@@ -6,9 +6,9 @@ public class Book extends MediaItem implements Previewable{
     private String author;
     private int pageCount;
 
-    public Book(String id, String title, String genre, String author, int pageCount) {
+    public Book(String id, String title, String genre, boolean available, String author, int pageCount) {
         
-        super(id, title, genre);
+        super(id, title, genre, available);
 
         this.author = author;
         this.pageCount = pageCount;
@@ -31,7 +31,7 @@ public class Book extends MediaItem implements Previewable{
     }
 
     public static Book sortDeserialized(String[] fields) {
-        return new Book(fields[0], fields[1], fields[2], fields[4], Integer.parseInt(fields[5]));
+        return new Book(fields[0], fields[1], fields[2], Boolean.parseBoolean(fields[3]), fields[5], Integer.parseInt(fields[6]));
     }
 
     @Override

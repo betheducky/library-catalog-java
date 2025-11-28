@@ -9,9 +9,9 @@ public class Movie extends MediaItem implements Previewable, Downloadable  {
     private String director;
     private double rating;
 
-    public Movie(String id, String title, String genre, int durationMinutes, String director, Double rating) {
+    public Movie(String id, String title, String genre, boolean available, int durationMinutes, String director, Double rating) {
         
-        super(id, title, genre);
+        super(id, title, genre, available);
 
         this.durationMinutes = durationMinutes;
         this.director = director;
@@ -43,7 +43,7 @@ public class Movie extends MediaItem implements Previewable, Downloadable  {
     }
 
      public static Movie sortDeserialized(String[] fields) {
-        return new Movie(fields[0], fields[1], fields[2], Integer.parseInt(fields[4]), fields[5], Double.parseDouble(fields[6]));
+        return new Movie(fields[0], fields[1], fields[2], Boolean.parseBoolean(fields[3]), Integer.parseInt(fields[5]), fields[6], Double.parseDouble(fields[7]));
     }
 
     @Override

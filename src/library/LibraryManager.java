@@ -1,6 +1,7 @@
 package library;
 
 import media.MediaItem;
+import util.DemoData;
 import library.exceptions.InvalidDataException;
 import library.persistence.FileHandler;
 
@@ -10,10 +11,11 @@ import java.util.List;
 
 public class LibraryManager {
 
-    private List<MediaItem> catalog = new ArrayList<>();
+    private List<MediaItem> catalog;
 
-    public LibraryManager(List<MediaItem> catalog) {
-        this.catalog = catalog;
+    public LibraryManager() {
+        this.catalog = new ArrayList<>();
+        DemoData.loadData(this.catalog);
     }
 
     public void addItem(MediaItem item) {

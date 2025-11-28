@@ -8,7 +8,7 @@ public abstract class MediaItem {
     private String genre;
     private boolean available;
 
-    public MediaItem(String id, String title, String genre) {
+    public MediaItem(String id, String title, String genre, boolean available) {
         this.id = id;
         this.title = title;
         this.genre = genre;
@@ -48,13 +48,13 @@ public abstract class MediaItem {
     }
 
     public String serialize() {
-        return getId() + "|" + getTitle() + "|" + getGenre() + "|" + serializeExtra();
+        return getId() + "|" + getTitle() + "|" + getGenre() + "|" + isAvailable() + "|" + serializeExtra();
     }
 
     public static MediaItem deserialize(String line) throws InvalidDataException {
         String[] fields = line.split("\\|");
         MediaItem formattedItem;
-        String itemType = fields[3];
+        String itemType = fields[4];
                 switch (itemType) {
                     case "BOOK":
                         formattedItem = Book.sortDeserialized(fields);
