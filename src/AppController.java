@@ -71,20 +71,20 @@ public class AppController {
                 case 1 -> {
                     String author = InputHelper.readString("Author: ");
                     int pageCount = InputHelper.readInt("Page Count: ");
-                    manager.addItem(new Book(id, title, genre, author, pageCount)); 
+                    manager.addItem(new Book(id, title, genre, true, author, pageCount)); 
                 }
 
                 case 2 -> {
                     int duration = InputHelper.readInt("Duration in minutes: ");
                     String director = InputHelper.readString("Director: ");
                     Double rating = InputHelper.readDouble("Rating: ");
-                    manager.addItem(new Movie(id, title, genre, duration, director, rating));
+                    manager.addItem(new Movie(id, title, genre, true, duration, director, rating));
                 }
 
                 case 3 -> {
                     String narrator = InputHelper.readString("Narrator: ");
                     int length = InputHelper.readInt("Length in Minutes: ");
-                    manager.addItem(new AudioBook(id, title, genre, narrator, length));
+                    manager.addItem(new AudioBook(id, title, genre, true, narrator, length));
                 }
             }
         }
