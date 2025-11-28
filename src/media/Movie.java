@@ -55,9 +55,9 @@ public class Movie extends MediaItem implements Previewable, Downloadable  {
     public void consume() {
         if(this.isAvailable()){
             this.setAvailable(false);
-            System.out.println("You have checked out the movie, " + getTitle() + "!");
+            System.out.println("You are now playing the movie, " + getTitle() + "!");
         } else {
-            System.out.println("UnavailableException! " + getTitle() + " cannot be checked out; it is not available.");
+            System.out.println("UnavailableException! " + getTitle() + " cannot be played unless it is available.");
         }
     }
 

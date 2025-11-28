@@ -43,9 +43,9 @@ public class Book extends MediaItem implements Previewable{
     public void consume() {
         if(this.isAvailable()) {
             this.setAvailable(false);
-            System.out.println("You have checked out the book, " + getTitle() + "!");
+            System.out.println("You are now reading the book, " + getTitle() + "!");
         } else {
-            System.out.println("UnavailableException! " + getTitle() + " cannot be checked out; it is not available.");
+            System.out.println("UnavailableException! " + getTitle() + " cannot be read unless it is available.");
         }
     }
 

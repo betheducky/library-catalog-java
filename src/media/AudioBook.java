@@ -44,9 +44,9 @@ public class AudioBook extends MediaItem implements Downloadable {
     @Override
     public void consume() {
         if(this.isAvailable()){
-            System.out.println("You have checked out the audiobook, " + getTitle() + "!");
+            System.out.println("You are now listening to the audiobook, " + getTitle() + "!");
         } else {
-            System.out.println(getTitle() + " cannot be checked out; it is not available.");
+            System.out.println(getTitle() + " cannot be listened to unless it is available.");
         }
     }
 
@@ -54,7 +54,7 @@ public class AudioBook extends MediaItem implements Downloadable {
     public void download() {
         if(this.isAvailable()) {
             this.setAvailable(false);
-            System.out.println("You have checked out the movie, " + getTitle() + "!");
+            System.out.println("You are now downloading the audiobook, " + getTitle() + "!");
         } else {
             System.out.println("UnavailableException! " + getTitle() + " is not available to download.");
         }
