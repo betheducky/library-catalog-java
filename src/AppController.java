@@ -35,6 +35,7 @@ public class AppController {
                     case 5 -> returnMedia();
                     case 6 -> previewMedia();
                     case 7 -> consumeMedia();
+                    case 8 -> searchMedia();
                     case 0 -> {
                         System.out.println("Exiting...");
                         running = false;
@@ -136,6 +137,10 @@ public class AppController {
         private void consumeMedia() {
             String id = InputHelper.readString("Enter ID: ");
             manager.consumeItem(id);
+        }
+
+        private void searchMedia() {
+            String
         }
 
     }
