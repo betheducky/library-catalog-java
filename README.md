@@ -1,6 +1,5 @@
 # 📚 Library Catalog — Java OOP Practice Project
 
----
 
 A Java console-based application built to practice fundamental object-oriented programming concepts, including:
 
@@ -22,7 +21,6 @@ A Java console-based application built to practice fundamental object-oriented p
 
 This project represents an intermediate Java exercise, designed to reinforce backend design patterns and multi-class architecture — not a production system.
 
----
 
 ## 🚀 Purpose
 
@@ -40,7 +38,6 @@ The goal of this app is to simulate a simplified library media system where user
 
 This project was created as a learning exercise, focusing on clean architecture, class relationships, and Java fundamentals.
 
----
 
 ## 🧠 What This Project Demonstrates
 
@@ -56,7 +53,6 @@ This project was created as a learning exercise, focusing on clean architecture,
 
 ✔ Modular Project Structure
 
----
 
 ## 🧪 How to Run This Project
 
@@ -80,7 +76,7 @@ javac Main.java
 ```bash
 java Main
 ```
----
+
 
 ## 🛠️ Technologies Used
 
@@ -94,7 +90,6 @@ Custom exceptions
 
 Basic file reading/writing
 
----
 
 ## 📌 Notes
 
@@ -110,6 +105,6 @@ This project is intentionally console-based to reinforce:
 
 It is published in GitHub as part of a practice / learning portfolio, not as a production-level application.
 
-📖 License
+## 📖 License
 
 This project is released for educational purposes. Free to use or adapt.
