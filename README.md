@@ -1,4 +1,4 @@
-#📚 Library Catalog — Java OOP Practice Project
+# 📚 Library Catalog — Java OOP Practice Project
 
 ---
 
@@ -24,7 +24,7 @@ This project represents an intermediate Java exercise, designed to reinforce bac
 
 ---
 
-##🚀 Purpose
+## 🚀 Purpose
 
 The goal of this app is to simulate a simplified library media system where users can:
 
@@ -42,7 +42,7 @@ This project was created as a learning exercise, focusing on clean architecture,
 
 ---
 
-##🧠 What This Project Demonstrates
+## 🧠 What This Project Demonstrates
 
 ✔ Object-Oriented Architecture
 
@@ -58,9 +58,9 @@ This project was created as a learning exercise, focusing on clean architecture,
 
 ---
 
-##🧪 How to Run This Project
+## 🧪 How to Run This Project
 
-###✔ Option 1: Run from VSCode (easiest)
+### ✔ Option 1: Run from VSCode (easiest)
 
 Open the folder in VSCode
 
@@ -68,19 +68,21 @@ Open Main.java
 
 Click the Run ▶ button
 
-###✔ Option 2: Run from Terminal
+### ✔ Option 2: Run from Terminal
 
 Inside the "src" project folder:
 
 1. Compile:
+```bash
 javac Main.java
-
-2. Run:
+```
+3. Run:
+```bash
 java Main
-
+```
 ---
 
-##🛠️ Technologies Used
+## 🛠️ Technologies Used
 
 Java 17+
 
@@ -94,7 +96,7 @@ Basic file reading/writing
 
 ---
 
-##📌 Notes
+## 📌 Notes
 
 This project is intentionally console-based to reinforce:
 
