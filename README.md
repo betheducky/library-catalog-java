@@ -1,4 +1,4 @@
-# 📚 Library Catalog — Java OOP Practice Project
+# 📚 Media Catalog — Java OOP Practice Project
 
 
 A Java console-based application built to practice fundamental object-oriented programming concepts, including:
